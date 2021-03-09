@@ -5,7 +5,7 @@ function App() {
   const [inputVal, setInputVal] = useState('');
   return (
     <div className="App">
-      <h1>Title</h1>
+      <h1>How fast can you type?</h1>
       <textarea
         value={inputVal}
         onChange={(e) => setInputVal(e.target.value)}
