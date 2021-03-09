@@ -3,6 +3,12 @@ import './App.css';
 
 function App() {
   const [inputVal, setInputVal] = useState('');
+
+  const numWords = (text) => {
+    const wordArr = text.trim().split(' ');
+    return wordArr.filter((word) => word !== '').length;
+  };
+
   return (
     <div className="App">
       <h1>How fast can you type?</h1>
@@ -11,7 +17,7 @@ function App() {
         onChange={(e) => setInputVal(e.target.value)}
       />
       <h4>Time remaining: </h4>
-      <button>Start</button>
+      <button onClick={() => console.log(numWords(inputVal))}>Start</button>
       <h1>Word count: </h1>
     </div>
   );
