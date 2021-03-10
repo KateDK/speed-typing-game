@@ -8,7 +8,11 @@ function App() {
     const wordArr = text.trim().split(' ');
     return wordArr.filter((word) => word !== '').length;
   };
-
+  useEffect(() => {
+    if (timeRemaining > 0) {
+      setTimeout(() => setTimeRemaining((oldTime) => oldTime - 1), 1000);
+    }
+  }, [timeRemaining]);
   return (
     <div className="App">
       <h1>How fast can you type?</h1>
