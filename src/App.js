@@ -4,7 +4,7 @@ import './App.css';
 function App() {
   const [inputVal, setInputVal] = useState('');
 
-  const numWords = (text) => {
+  const countWords = (text) => {
     const wordArr = text.trim().split(' ');
     return wordArr.filter((word) => word !== '').length;
   };
@@ -17,7 +17,7 @@ function App() {
         onChange={(e) => setInputVal(e.target.value)}
       />
       <h4>Time remaining: </h4>
-      <button onClick={() => console.log(numWords(inputVal))}>Start</button>
+      <button onClick={() => console.log(countWords(inputVal))}>Start</button>
       <h1>Word count: </h1>
     </div>
   );
