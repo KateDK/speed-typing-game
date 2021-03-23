@@ -4,6 +4,7 @@ import './App.css';
 function App() {
   const [inputVal, setInputVal] = useState('');
   const [timeRemaining, setTimeRemaining] = useState(10);
+  const [isGameOn, setIsGameOn] = useState(false);
   const countWords = (text) => {
     const wordArr = text.trim().split(' ');
     return wordArr.filter((word) => word !== '').length;
