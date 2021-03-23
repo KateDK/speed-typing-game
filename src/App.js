@@ -10,10 +10,13 @@ function App() {
     return wordArr.filter((word) => word !== '').length;
   };
   useEffect(() => {
-    if (timeRemaining > 0) {
+    if (timeRemaining > 0 && isGameOn) {
       setTimeout(() => setTimeRemaining((oldTime) => oldTime - 1), 1000);
+    } else {
+      setIsGameOn(false);
     }
-  }, [timeRemaining]);
+  }, [timeRemaining, isGameOn]);
+
   return (
     <div className="App">
       <h1>How fast can you type?</h1>
@@ -22,7 +25,7 @@ function App() {
         onChange={(e) => setInputVal(e.target.value)}
       />
       <h4>Time remaining: {timeRemaining} seconds</h4>
-      <button onClick={() => console.log(countWords(inputVal))}>Start</button>
+      <button onClick={() => setIsGameOn(true)}>Start</button>
       <h1>Word count: </h1>
     </div>
   );
