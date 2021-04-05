@@ -33,7 +33,9 @@ function App() {
         onChange={(e) => setInputVal(e.target.value)}
       />
       <h4>Time remaining: {timeRemaining} seconds</h4>
-      <button onClick={() => startGame()}>Start</button>
+      <button disabled={isGameOn} onClick={() => startGame()}>
+        Start
+      </button>
       <h1>Word count: {wordCount}</h1>
     </div>
   );
