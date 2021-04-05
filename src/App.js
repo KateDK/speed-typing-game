@@ -35,6 +35,7 @@ function App() {
       <h1>How fast can you type?</h1>
       <textarea
         value={inputVal}
+        disabled={!isGameOn}
         onChange={(e) => setInputVal(e.target.value)}
       />
       <h4>Time remaining: {timeRemaining} seconds</h4>
