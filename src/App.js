@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
+  const gameDuration = 5;
   const [inputVal, setInputVal] = useState('');
-  const [timeRemaining, setTimeRemaining] = useState(5);
+  const [timeRemaining, setTimeRemaining] = useState(gameDuration);
   const [isGameOn, setIsGameOn] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const countWords = (text) => {
