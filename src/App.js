@@ -14,7 +14,10 @@ function App() {
     if (timeRemaining > 0 && isGameOn) {
       setTimeout(() => setTimeRemaining((oldTime) => oldTime - 1), 1000);
     } else {
+      setWordCount(countWords(inputVal));
+      // numWords = countWords(inputVal);
       setIsGameOn(false);
+      // setWordCount(inputVal.split(" ").length);
     }
   }, [timeRemaining, isGameOn]);
 
