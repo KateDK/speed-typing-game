@@ -27,7 +27,7 @@ function App() {
       />
       <h4>Time remaining: {timeRemaining} seconds</h4>
       <button onClick={() => setIsGameOn(true)}>Start</button>
-      <h1>Word count: </h1>
+      <h1>Word count: {wordCount}</h1>
     </div>
   );
 }
