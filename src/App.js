@@ -16,12 +16,17 @@ function App() {
     setIsGameOn(true);
     setTimeRemaining(gameDuration);
   };
+
+  const endGame = () => {
+    setWordCount(countWords(inputVal));
+    setIsGameOn(false);
+  };
+
   useEffect(() => {
     if (timeRemaining > 0 && isGameOn) {
       setTimeout(() => setTimeRemaining((oldTime) => oldTime - 1), 1000);
     } else {
-      setWordCount(countWords(inputVal));
-      setIsGameOn(false);
+      endGame();
     }
   }, [timeRemaining, isGameOn]);
 
