@@ -11,6 +11,11 @@ function App() {
     const wordArr = text.trim().split(' ');
     return wordArr.filter((word) => word !== '').length;
   };
+  const startGame = () => {
+    setInputVal('');
+    setIsGameOn(true);
+    setTimeRemaining(gameDuration);
+  };
   useEffect(() => {
     if (timeRemaining > 0 && isGameOn) {
       setTimeout(() => setTimeRemaining((oldTime) => oldTime - 1), 1000);
