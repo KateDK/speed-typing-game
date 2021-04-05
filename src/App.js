@@ -3,8 +3,9 @@ import './App.css';
 
 function App() {
   const [inputVal, setInputVal] = useState('');
-  const [timeRemaining, setTimeRemaining] = useState(10);
+  const [timeRemaining, setTimeRemaining] = useState(5);
   const [isGameOn, setIsGameOn] = useState(false);
+  const [wordCount, setWordCount] = useState(0);
   const countWords = (text) => {
     const wordArr = text.trim().split(' ');
     return wordArr.filter((word) => word !== '').length;
